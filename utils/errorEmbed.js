@@ -9,9 +9,9 @@ class ErrorEmbed {
             .setColor('RED')
             .setTitle(`❌ ${this.title} ❌`)
             .setDescription(this.description);
-            
+
         return embed;
     }
 }
 
-module.exports = ErrorEmbed
+module.exports = ErrorEmbed;
