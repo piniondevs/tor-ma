@@ -1,7 +1,8 @@
 const commandIndex = {
-    hello: {
-        help: 'A command that replies with hello world',
-        handler: require('./commands/hello')
+    request: {
+        name: 'request',
+        helpInfo: 'The command that you use to request a gali.',
+        handler: require('./commands/request')
     }
 }
 

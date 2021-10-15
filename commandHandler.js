@@ -7,7 +7,7 @@ const prefix = '~';
 
 const commandHandler = (message) => {
     if (!message.content.startsWith(prefix)) {
-        message.channel.send('Ill add this part later');
+        message.channel.send('This is a placeholder gali');
         return;
     }
     
