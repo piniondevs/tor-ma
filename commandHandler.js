@@ -1,9 +1,10 @@
-const commandIndex = require('./commandIndex');
+const commandIndexGenerator = require('./commandIndex');
 
-// Utility Class Imports
 const ErrorEmbed = require('./utils/errorEmbed');
 
 const prefix = '~';
+
+const commandIndex = commandIndexGenerator()
 
 const commandHandler = (message) => {
     if (!message.content.startsWith(prefix)) {

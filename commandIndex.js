@@ -24,4 +24,4 @@ const commandIndexGenerator = () => {
     }
 }
 
-module.exports = commandIndexGenerator();
+module.exports = commandIndexGenerator;

@@ -1,7 +1,6 @@
 const axios = require('axios');
 const dotenv = require('dotenv');
 
-// Utility Classes
 const ErrorEmbed = require('../utils/errorEmbed');
 const InfoEmbed = require('../utils/infoEmbed');
 
