@@ -4,7 +4,7 @@ const commandIndexGenerator = require('../commandIndex');
 
 module.exports = {
     name: 'help',
-    helpInfo: 'Shows the help menu.',
+    helpInfo: 'Shows the help menu. `Usage: ~help`',
     handler: (message) => {
 
         const commandIndex = commandIndexGenerator();

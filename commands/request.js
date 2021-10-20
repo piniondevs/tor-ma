@@ -10,7 +10,7 @@ const endpoint = process.env.ENDPOINT;
 
 module.exports = {
     name: 'request',
-    helpInfo: 'The command that you use to request a gali.',
+    helpInfo: 'The command that you use to request a gali. `Usage: ~request some gali`',
     handler: async (message) => {
         try {
 

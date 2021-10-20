@@ -8,7 +8,7 @@ const commandIndex = commandIndexGenerator()
 
 const commandHandler = (message) => {
     if (!message.content.startsWith(prefix)) {
-        message.channel.send('This is a placeholder gali');
+        //message.channel.send('This is a placeholder gali');
         return;
     }
     

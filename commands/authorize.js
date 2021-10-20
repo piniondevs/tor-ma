@@ -10,7 +10,7 @@ const InfoEmbed = require('../utils/infoEmbed');
 
 module.exports = {
     name: 'authorize',
-    helpInfo: 'Command to authorize galis (Only Admins Can Do This)',
+    helpInfo: 'Command to authorize galis (Only Admins Can Do This). `Usage: ~authorize nanoid(10)`',
     handler: async (message) => {
         try {
             if (message.author.id !== '453146976008011777') {
