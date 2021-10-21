@@ -7,10 +7,11 @@ const endpoint = process.env.ENDPOINT;
 
 const ErrorEmbed = require('../utils/errorEmbed');
 const InfoEmbed = require('../utils/infoEmbed');
+const genericError = require('../utils/genericError');
 
 module.exports = {
     name: 'authorize',
-    helpInfo: 'Command to authorize galis (Only Admins Can Do This). `Usage: ~authorize nanoid(10)`',
+    helpInfo: 'Command to authorize galis (Only admins can do this). `Usage: ~authorize nanoid(10)`',
     handler: async (message) => {
         try {
             if (message.author.id !== '453146976008011777') {
@@ -37,8 +38,7 @@ module.exports = {
 
             message.channel.send(new InfoEmbed('Gali Authorized', 'The gali has been authorized.'));
         } catch (err) {
-            const someRandomErr = new ErrorEmbed('Something Went Wrong', 'Something went horribly wrong, ping tahlil so that he can check the logs and find out what it is.');
-            message.channel.send(someRandomErr);
+            genericError(message);
             console.error(err)
         }
     }

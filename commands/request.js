@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 
 const ErrorEmbed = require('../utils/errorEmbed');
 const InfoEmbed = require('../utils/infoEmbed');
+const genericError = require('../utils/genericError');
 
 dotenv.config()
 
@@ -37,8 +38,7 @@ module.exports = {
 
             message.channel.send(successEmbed);
         } catch (err) {
-            const someRandomErr = new ErrorEmbed('Something Went Wrong', 'Something went horribly wrong, ping tahlil so that he can check the logs and find out what it is.');
-            message.channel.send(someRandomErr);
+            genericError(message);
             console.error(err)
         }
     }

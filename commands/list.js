@@ -7,6 +7,8 @@ const endpoint = process.env.ENDPOINT;
 
 const ErrorEmbed = require("../utils/errorEmbed");
 const ListEmbed = require('../utils/listEmbed');
+const genericError = require('../utils/genericError');
+
 
 module.exports = {
     name: 'list',
@@ -71,8 +73,7 @@ module.exports = {
             }
 
         } catch (err) {
-            const someRandomErr = new ErrorEmbed('Something Went Wrong', 'Something went horribly wrong, ping tahlil so that he can check the logs and find out what it is.');
-            message.channel.send(someRandomErr);
+            genericError(message);
             console.error(err);
         }
     }
