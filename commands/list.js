@@ -33,7 +33,7 @@ module.exports = {
                 data.forEach(item => {
                     fields.push({
                         name: item.gali,
-                        value: `By: **${item.author}**`
+                        value: `By: **${item.author}** & ID: **${item.id}**`
                     });
                 });
                 return fields;
