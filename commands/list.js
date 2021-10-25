@@ -27,6 +27,7 @@ module.exports = {
             }
 
             const arg = baseCommand[0];
+            const target = message.mentions.users.first();
 
             const embedFieldify = (data) => {
                 const fields = [];
@@ -45,6 +46,26 @@ module.exports = {
                     const galiRes = await axios.get(`${endpoint}/galis`);
                     const galiList = embedFieldify(galiRes.data);
 
+                    if (target) {
+                        const targetedGalis = galiRes.data.filter(items => {
+                            return items.author === target.username;
+                        });
+                        if (targetedGalis.length === 0) {
+                            message.channel.send(new ErrorEmbed(
+                                'No results found',
+                                'We could not find any galis from the user.'
+                            ));
+                            return;
+                        }
+                        const targetFields = embedFieldify(targetedGalis);
+                        message.channel.send(new ListEmbed(
+                            'Galis',
+                            `All the galis by ${target.username}`,
+                            targetFields
+                        ))
+                        return;
+                    }
+
                     message.channel.send(new ListEmbed(
                         'Galis',
                         'These are all the galis I have access to.',
@@ -56,6 +77,26 @@ module.exports = {
                     
                     const reqRes = await axios.get(`${endpoint}/requests`);
                     const reqList = embedFieldify(reqRes.data);
+
+                    if (target) {
+                        const targetedRequests = reqRes.data.filter(items => {
+                            return items.author === target.username;
+                        });
+                        if (targetedRequests.length === 0) {
+                            message.channel.send(new ErrorEmbed(
+                                'No results found',
+                                'We could not find any requests from the user.'
+                            ));
+                            return;
+                        }
+                        const requestFields = embedFieldify(targetedRequests);
+                        message.channel.send(new ListEmbed(
+                            'Requests',
+                            `All the requests by ${target.username}`,
+                            requestFields
+                        ))
+                        return;
+                    }
 
                     message.channel.send(new ListEmbed(
                         'Requests',
