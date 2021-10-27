@@ -9,10 +9,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log(`Bot logged in as ${client.user.tag}`);
-    client.user.setPresence({
-        name: 'debug mode',
-        type: 'WATCHING'
-    });
+    client.user.setActivity('Use ~help');
 });
 
 
