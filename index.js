@@ -18,7 +18,7 @@ client.on('ready', () => {
 
 client.on('message', (message) => {
     if (message.author.id === client.user.id) return;
-    if (message.channel.id !== '894461781907492904') return;
+    if (message.channel.id !== process.env.CHANNEL_ID) return;
     commandHandler(message);
 });
 
